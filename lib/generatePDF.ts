@@ -164,90 +164,103 @@ export async function generatePDF(formData: FormData) {
 
   // ─── CELE 7 MANTRE ────────────────────────────────────────────────
   const mantre = mantreByType[relationType] || [];
+  const innerW = contentW - 14; // lățime text în card (padding 7 stânga + 7 dreapta)
 
   mantre.forEach((tmpl, idx) => {
     const text = safe(tmpl.replace(/{p}/g, personName || "aceasta persoana"));
 
-    // Împărțim textul în linii (respectăm \n din template)
+    // Linii text — respectăm \n
     const paragraphs = text.split("\n");
     let allLines: string[] = [];
     paragraphs.forEach((para, pi) => {
-      const ls = doc.splitTextToSize(para, contentW - 10);
+      const ls = doc.splitTextToSize(para, innerW);
       allLines = allLines.concat(ls);
-      if (pi < paragraphs.length - 1) allLines.push(""); // linie goală între paragrafe
+      if (pi < paragraphs.length - 1) allLines.push("");
     });
 
-    const pocLines = doc.splitTextToSize(safe(POC), contentW - 10);
-    const textH = allLines.length * 5.5 + pocLines.length * 5 + 20;
-    const cardH = textH + 10;
+    doc.setFontSize(10);
+    const pocLines = doc.splitTextToSize(safe(POC), innerW);
 
-    check(cardH + 6);
+    // Calculăm înălțimea exactă
+    const lh = 5.5; // line height text
+    const lhPoc = 4.8;
+    const padTop = 7;
+    const padBot = 5;
+    let textBlockH = 0;
+    allLines.forEach(l => { textBlockH += l === "" ? 2.5 : lh; });
+    const pocBlockH = pocLines.length * lhPoc;
+    const cardH = padTop + textBlockH + 3 + pocBlockH + padBot;
 
-    // Card background
+    check(cardH + 4);
+
+    // Card
     doc.setFillColor(...cardBg);
     doc.setDrawColor(...grayLight);
     doc.setLineWidth(0.2);
     doc.roundedRect(margin, y, contentW, cardH, 3, 3, "FD");
 
-    // Număr mantră
+    // Număr
     doc.setFont("helvetica", "bold");
     doc.setFontSize(8);
     doc.setTextColor(...gold);
-    doc.text(`${idx + 1}.`, margin + 4, y + 7);
+    doc.text(`${idx + 1}.`, margin + 3, y + padTop);
 
     // Text mantră
-    let ty = y + 7;
+    let ty = y + padTop;
     doc.setFont("helvetica", "normal");
     doc.setFontSize(10);
     doc.setTextColor(...purple);
     allLines.forEach((line: string) => {
-      if (line === "") { ty += 3; return; }
+      if (line === "") { ty += 2.5; return; }
       doc.text(line, margin + 10, ty);
-      ty += 5.5;
+      ty += lh;
     });
 
-    // POC — italic, mai mic, auriu
+    // POC
     ty += 3;
     doc.setFont("helvetica", "bolditalic");
-    doc.setFontSize(8.5);
+    doc.setFontSize(8);
     doc.setTextColor(...gold);
     pocLines.forEach((line: string) => {
       doc.text(line, margin + 10, ty);
-      ty += 5;
+      ty += lhPoc;
     });
 
-    y += cardH + 5;
+    y += cardH + 3;
   });
 
   // ─── BLOC DORINȚE ─────────────────────────────────────────────────
   if (selectedWishes.length > 0) {
+    const wishLabel = relationType === "sine" ? "in viata mea" : `in relatia mea cu ${personName}`;
     const wishText = safe(
-      `Aleg acum sa creez in relatia mea cu ${personName}: ${selectedWishes.join(", ")}. Permit acestor calitati sa se manifeste cu usurinta si bucurie in viata mea.`
+      `Aleg acum sa creez ${wishLabel}: ${selectedWishes.join(", ")}. Permit acestor calitati sa se manifeste cu usurinta si bucurie.`
     );
-    const wishLines = doc.splitTextToSize(wishText, contentW - 10);
-    const pocLines = doc.splitTextToSize(safe(POC), contentW - 10);
-    const cardH = wishLines.length * 5.5 + pocLines.length * 5 + 16;
+    const wishLines = doc.splitTextToSize(wishText, innerW);
+    const pocLines = doc.splitTextToSize(safe(POC), innerW);
+    const lh = 5.5;
+    const lhPoc = 4.8;
+    const cardH = 7 + wishLines.length * lh + 3 + pocLines.length * lhPoc + 5;
 
-    check(cardH + 6);
+    check(cardH + 4);
 
     doc.setFillColor(...cream);
     doc.setDrawColor(...gold);
     doc.setLineWidth(0.3);
     doc.roundedRect(margin, y, contentW, cardH, 3, 3, "FD");
 
-    let ty = y + 8;
+    let ty = y + 7;
     doc.setFont("helvetica", "italic");
     doc.setFontSize(10);
     doc.setTextColor(138, 96, 32);
-    wishLines.forEach((line: string) => { doc.text(line, margin + 6, ty); ty += 5.5; });
+    wishLines.forEach((line: string) => { doc.text(line, margin + 7, ty); ty += lh; });
 
     ty += 3;
     doc.setFont("helvetica", "bolditalic");
-    doc.setFontSize(8.5);
+    doc.setFontSize(8);
     doc.setTextColor(...gold);
-    pocLines.forEach((line: string) => { doc.text(line, margin + 6, ty); ty += 5; });
+    pocLines.forEach((line: string) => { doc.text(line, margin + 7, ty); ty += lhPoc; });
 
-    y += cardH + 5;
+    y += cardH + 3;
   }
 
   // ─── ÎNCHEIERE ────────────────────────────────────────────────────
