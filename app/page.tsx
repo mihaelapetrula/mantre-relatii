@@ -60,6 +60,7 @@ export default function LandingPage() {
         </Link>
 
         <p className="landing-author">Mihaela Petrula</p>
+        <p className="landing-author-title">Trainer și Terapeut · Specialist în Terapii Complementare</p>
       </div>
     </main>
   );

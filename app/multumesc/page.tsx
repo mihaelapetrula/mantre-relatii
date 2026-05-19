@@ -35,6 +35,7 @@ export default function MultumescPage() {
         </div>
 
         <p className="thanks-author">Mihaela Petrula</p>
+        <p className="thanks-author-title">Trainer și Terapeut · Specialist în Terapii Complementare</p>
       </div>
     </main>
   );
