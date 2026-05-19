@@ -1,156 +1,125 @@
 export const POC =
-  "Right, wrong, good, bad, POD, POC, all 100, shorts, boys, povad's, bases, creations and beyonds.";
+  "Write and wrong, good and bad, POD and POC, all 100, shorts boys povad's bases creations and beyonds.";
+
+export const typeLabels: Record<string, string> = {
+  cuplu: "Relatie de Cuplu",
+  parinte: "Relatie Parinte - Copil",
+};
 
 export const painsByType: Record<string, string[]> = {
   cuplu: [
-    "Rănire / trădare",
+    "Ranire / tradare",
     "Gelozie / control",
-    "Distanță emoțională",
-    "Așteptări neîmplinite",
-    "Teamă de abandon",
-    "Vinovăție",
-    "Comunicare blocată",
-    "Loialități de familie",
-    "Dependență emoțională",
+    "Distanta emotionala",
+    "Asteptari neimplinite",
+    "Teama de abandon",
+    "Vinovatie",
+    "Comunicare blocata",
+    "Loialitati de familie",
+    "Dependenta emotionala",
     "Putere / dominare",
   ],
   parinte: [
-    "Vinovăție",
-    "Așteptări și judecăți",
-    "Răni din copilărie",
-    "Lipsă de recunoaștere",
-    "Control / supraprotecție",
-    "Tipare moștenite",
-    "Separare / distanță",
-    "Frică de dezamăgire",
-    "Comparații dureroase",
-    "Loialitate toxică",
+    "Vinovatie",
+    "Asteptari si judecati",
+    "Rani din copilarie",
+    "Lipsa de recunoastere",
+    "Control / supraprotectie",
+    "Tipare mostenite",
+    "Separare / distanta",
+    "Frica de dezamagire",
+    "Comparatii dureroase",
+    "Loialitate toxica",
   ],
 };
 
 export const wishesByType: Record<string, string[]> = {
   cuplu: [
-    "Iubire autentică",
-    "Comunicare deschisă",
-    "Încredere reciprocă",
-    "Apropiere și intimitate",
-    "Libertate în relație",
+    "Iubire autentica",
+    "Comunicare deschisa",
+    "Incredere reciproca",
+    "Apropiere si intimitate",
+    "Libertate in relatie",
     "Respect reciproc",
-    "Bucurie și ușurință",
-    "Limite sănătoase",
-    "Creștere împreună",
-    "Pace și echilibru",
+    "Bucurie si usurinta",
+    "Limite sanatoase",
+    "Crestere impreuna",
+    "Pace si echilibru",
   ],
   parinte: [
-    "Acceptare reciprocă",
-    "Vindecare și iertare",
-    "Conexiune autentică",
-    "Respect și autonomie",
-    "Iubire necondiționată",
-    "Înțelegere profundă",
+    "Acceptare reciproca",
+    "Vindecare si iertare",
+    "Conexiune autentica",
+    "Respect si autonomie",
+    "Iubire neconditionata",
+    "Intelegere profunda",
     "Eliberare din tipare",
-    "Comunicare sinceră",
+    "Comunicare sincera",
     "Gratitudine",
-    "Pace interioară",
+    "Pace interioara",
   ],
 };
 
 export const selfStates: string[] = [
-  "Eliberat(ă) și ușor(ă)",
-  "Puternic(ă) și centrat(ă)",
-  "În pace cu mine",
-  "Deschis(ă) și prezent(ă)",
-  "Recunoscător(oare)",
+  "Eliberat(a) si usor(a)",
+  "Puternic(a) si centrat(a)",
+  "In pace cu mine",
+  "Deschis(a) si prezent(a)",
+  "Recunoscator(oare)",
 ];
 
-export const typeLabels: Record<string, string> = {
-  cuplu: "Relație de Cuplu",
-  parinte: "Relație Părinte – Copil",
+// 7 mantre fixe per tip relatie, cu {p} = numele persoanei
+// Stilul original: liste detaliate, bogate, POC dupa fiecare
+export const mantreByType: Record<string, string[]> = {
+  cuplu: [
+    // 1
+    "Distrug si decreez in totalitate toate … povestile, asteptarile, gandurile, emotiile, atasamentele, vorbele de joasa frecventa, ranile si dezamagirile ce au fost in relatia mea cu {p} de pana astazi.",
+
+    // 2
+    "Distrug si decreez in totalitate toate … rigiditatile, temerile, iluziile, gandurile spuse si nespuse, emotiile si fricile, blocajele stiute si nestiute, cuvintele si sentimentele de joasa frecventa ce au fost in relatia mea cu {p} de pana astazi.",
+
+    // 3
+    "Distrug si decreez in totalitate toate … vinovatiile, pierderile, neiertarile, povestile, atacurile energetice si autoatacurile energetice, stringurile si efectele lor ce au fost in relatia mea cu {p} de pana astazi.",
+
+    // 4
+    "Cate legaturi, legaturi de sange, legaturi de suflet, contracte constiinte si inconstiente, promisiuni, alianțe, loialitati si fidelitati am impreuna cu {p} sau fata de {p} … din toate timpurile, spatiile, dimensiunile si realitatile — pe toate astea le reneg, revoc, retractez, anulez, distrug si decreez in totalitate acum de un dumnezelion de ori pentru eternitate.",
+
+    // 5
+    "Distrug si decreez in totalitate toate limitarile preluate din arborele genealogic:\n- de la linia mamei\n- de la linia tatalui\n- de la linia partenerilor anteriori\n- din societate\nsi toate stringurile, legaturile, scurgerile pe care le-am creat si la care m-am aliniat in relatia mea cu {p} de pana astazi. Cer sa se distruga, decreeze si dizolve in TOTALITATE acum.",
+
+    // 6
+    "Distrug si decreez in totalitate toate momentele in care m-am facut mic(a) in raport cu {p}, toate momentele in care m-am anulat, ignorat, ascuns sau incarcat pentru a fi acceptat(a) si iubit(a) … si toate efectele acestora de pana astazi.",
+
+    // 7
+    "Comand sa se extraga toate acestea — povestile, ranile, fricile, contractele, limitarile, loialitatile, vinovatiile si tot ce nu am enumerat — din relatia mea cu {p} si sa se distruga, decreeze in totalitate ACUM si pentru totdeauna.\nSi vizualizezi cum toate acestea se extrag!",
+  ],
+
+  parinte: [
+    // 1
+    "Distrug si decreez in totalitate toate … povestile, asteptarile, judecatile, gandurile, emotiile, atasamentele, cuvintele de joasa frecventa ce au fost in relatia mea cu {p} de pana astazi.",
+
+    // 2
+    "Distrug si decreez in totalitate toate … vinovatiile, pierderile, neiertarile, ranile din copilarie, atacurile energetice si autoatacurile energetice, stringurile si efectele lor ce au fost in relatia mea cu {p} de pana astazi.",
+
+    // 3
+    "Distrug si decreez in totalitate toate … rigiditatile, temerile, conditionarile, credintele gresite impuse sau preluate, blocajele stiute si nestiute, sentimentele de joasa frecventa ce au fost in relatia mea cu {p} de pana astazi.",
+
+    // 4
+    "Cate legaturi, contracte de sange, promisiuni, loialitati si fidelitati constiente si inconstiente am impreuna cu {p} sau fata de {p} … din toate timpurile, spatiile, dimensiunile si realitatile — pe toate astea le reneg, revoc, retractez, anulez, distrug si decreez in totalitate acum de un dumnezelion de ori pentru eternitate.",
+
+    // 5
+    "Distrug si decreez in totalitate toate limitarile preluate din arborele genealogic:\n- de la linia mamei\n- de la linia tatalui\nsi toate tiparele, loialitatile toxice, scurgerile energetice pe care le-am mostenit sau recreat in relatia mea cu {p} de pana astazi. Cer sa se distruga, decreeze si dizolve in TOTALITATE acum.",
+
+    // 6
+    "Distrug si decreez in totalitate toate momentele in care m-am facut mic(a), nevrednic(a) sau vinovat(a) in raport cu {p} … toate momentele in care am purtat durerea lui/ei ca pe a mea … si toate efectele acestora de pana astazi.",
+
+    // 7
+    "Comand sa se extraga toate acestea — ranile, vinovatiile, contractele, tiparele, loialitatile, judecatile si tot ce nu am enumerat — din relatia mea cu {p} si sa se distruga, decreeze in totalitate ACUM si pentru totdeauna.\nSi vizualizezi cum toate acestea se extrag!",
+  ],
 };
 
+// Pastram templates pentru compatibilitate (nu mai e folosit in PDF)
 export const templates: Record<string, Record<string, string[]>> = {
-  cuplu: {
-    "Rănire / trădare": [
-      "Distrug și decreez în totalitate toate rănile, trădările, dezamăgirile și emoțiile de joasă frecvență ce au fost în relația mea cu {p} de până astăzi. Vrei să distrugi, eliberezi și decreezi? Spune DA.",
-      "Distrug și decreez în totalitate toate momentele în care m-am simțit trădat(ă), nedreptățit(ă) sau nevăzut(ă) în relația cu {p} și toate efectele lor de până astăzi. Spune DA.",
-    ],
-    "Gelozie / control": [
-      "Distrug și decreez în totalitate toată gelozia, nevoia de control, fricile și proiecțiile pe care le-am creat sau preluat în relația cu {p} de până astăzi. Spune DA.",
-      "Oriunde am ales să controlez sau să mă las controlat(ă) în relația cu {p}, oriunde am creat gelozie ca formă de iubire sau protecție, vrei să distrugi și decreezi? Spune DA.",
-    ],
-    "Distanță emoțională": [
-      "Distrug și decreez în totalitate toate barierele, zidurile și distanțele emoționale pe care le-am creat în relația cu {p} de până astăzi. Spune DA.",
-      "Oriunde am ales tăcerea sau retragerea în locul apropierii față de {p}, vrei să distrugi, eliberezi și decreezi? Spune DA.",
-    ],
-    "Așteptări neîmplinite": [
-      "Distrug și decreez în totalitate toate așteptările, iluziile și dezamăgirile pe care le-am creat în relația cu {p} de până astăzi. Spune DA.",
-      "Oriunde am decis că {p} ar trebui să fie altfel sau să mă iubească diferit, vrei să distrugi și decreezi? Spune DA.",
-    ],
-    "Teamă de abandon": [
-      "Distrug și decreez în totalitate toate fricile de abandon, de pierdere sau separare care au influențat relația mea cu {p} de până astăzi. Spune DA.",
-      "Oriunde am ales să mă micșorez sau să mă sacrific din frică de abandon în relația cu {p}, vrei să distrugi și decreezi? Spune DA.",
-    ],
-    "Vinovăție": [
-      "Distrug și decreez în totalitate toată vinovăția, auto-pedeapsa și judecata față de mine și față de {p} din relația noastră de până astăzi. Spune DA.",
-      "Oriunde m-am vinovat(ă) sau l-am/o am învinuit pe {p} și am creat suferință din asta, vrei să distrugi, eliberezi și decreezi? Spune DA.",
-    ],
-    "Comunicare blocată": [
-      "Distrug și decreez în totalitate toate cuvintele nespuse, reproșurile ascunse și neînțelegerile din relația mea cu {p} de până astăzi. Spune DA.",
-      "Oriunde mi-am înghițit adevărul sau am vorbit din frică în relația cu {p}, vrei să distrugi și decreezi? Spune DA.",
-    ],
-    "Loialități de familie": [
-      "Distrug și decreez în totalitate toate tiparele și loialitățile preluate din familia mea care au influențat relația mea cu {p} de până astăzi. Spune DA.",
-      "Oriunde am repetat în relația cu {p} tipare moștenite din familie, din loialitate față de un sistem, vrei să distrugi și decreezi? Spune DA.",
-    ],
-    "Dependență emoțională": [
-      "Distrug și decreez în totalitate toată dependența, atașamentul nesănătos și nevoia de validare pe care le-am creat în relația cu {p} de până astăzi. Spune DA.",
-      "Oriunde mi-am condiționat fericirea și valoarea de prezența sau aprobarea lui/ei {p}, vrei să distrugi și decreezi? Spune DA.",
-    ],
-    "Putere / dominare": [
-      "Distrug și decreez în totalitate toate dinamicile de putere, dominare sau manipulare ce au existat în relația mea cu {p} de până astăzi. Spune DA.",
-      "Oriunde am cedat puterea mea sau am preluat-o pe a lui/ei {p} în mod nesănătos, vrei să distrugi și decreezi? Spune DA.",
-    ],
-  },
-  parinte: {
-    "Vinovăție": [
-      "Distrug și decreez în totalitate toată vinovăția față de {p}, tot ce am crezut că am greșit în relația noastră de până astăzi. Spune DA.",
-      "Oriunde am primit vinovăția de la {p} și am purtat-o ca pe a mea, vrei să distrugi, eliberezi și decreezi? Spune DA.",
-    ],
-    "Așteptări și judecăți": [
-      "Distrug și decreez în totalitate toate așteptările și judecățile din relația mea cu {p} — ale mele și ale lui/ei față de mine — de până astăzi. Spune DA.",
-      "Oriunde am simțit că nu sunt destul de bun(ă) pentru {p}, vrei să distrugi și decreezi? Spune DA.",
-    ],
-    "Răni din copilărie": [
-      "Distrug și decreez în totalitate toate rănile și traumele din relația mea cu {p} și toate efectele lor ce mă urmăresc până astăzi. Spune DA.",
-      "Oriunde copilul din mine încă poartă durerea relației cu {p}, vrei să distrugi și decreezi? Spune DA.",
-    ],
-    "Lipsă de recunoaștere": [
-      "Distrug și decreez în totalitate toate momentele în care nu m-am simțit văzut(ă) sau apreciat(ă) de {p} de până astăzi. Spune DA.",
-      "Oriunde mi-am condiționat valoarea de recunoașterea lui/ei {p}, vrei să distrugi și decreezi? Spune DA.",
-    ],
-    "Control / supraprotecție": [
-      "Distrug și decreez în totalitate tot controlul și supraprotecția din relația cu {p} și toate efectele lor de până astăzi. Spune DA.",
-      "Oriunde m-am lăsat controlat(ă) de {p} sau am ales să controlez la rândul meu din frică, vrei să distrugi și decreezi? Spune DA.",
-    ],
-    "Tipare moștenite": [
-      "Distrug și decreez în totalitate toate tiparele moștenite din relația cu {p} pe care le-am recreat în viața mea. Spune DA.",
-      "Oriunde am ales să repet tiparele lui/ei {p} din loialitate sau din lipsă de alte modele, vrei să distrugi și decreezi? Spune DA.",
-    ],
-    "Separare / distanță": [
-      "Distrug și decreez în totalitate toată distanța și răceala din relația mea cu {p} de până astăzi. Spune DA.",
-      "Oriunde distanța față de {p} a devenit normă ca formă de protecție, vrei să distrugi și decreezi? Spune DA.",
-    ],
-    "Frică de dezamăgire": [
-      "Distrug și decreez în totalitate toată frica de a-l/o dezamăgi pe {p} și tot ce am evitat din cauza asta. Spune DA.",
-      "Oriunde mi-am trăit viața în funcție de așteptările lui/ei {p} din frică de dezamăgire, vrei să distrugi și decreezi? Spune DA.",
-    ],
-    "Comparații dureroase": [
-      "Distrug și decreez în totalitate toate comparațiile și umilințele pe care le-am trăit în relația cu {p} de până astăzi. Spune DA.",
-      "Oriunde m-am simțit mai puțin față de așteptările lui/ei {p}, vrei să distrugi și decreezi? Spune DA.",
-    ],
-    "Loialitate toxică": [
-      "Distrug și decreez în totalitate toată loialitatea față de {p} care m-a ținut blocat(ă) sau mi-a limitat propria viață. Spune DA.",
-      "Oriunde am ales suferința sau sacrificiul din loialitate față de {p}, vrei să distrugi și decreezi? Spune DA.",
-    ],
-  },
+  cuplu: {},
+  parinte: {},
 };
