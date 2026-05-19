@@ -6,11 +6,7 @@ export default function LandingPage() {
     <main className="landing">
       <div className="landing-inner">
         <span className="ornament">✦ ✦ ✦</span>
-        <h1 className="landing-title">
-          Mantre de <em>Curățare</em>
-          <br />
-          pentru Relații
-        </h1>
+        <h1 className="landing-title">Mantre de Curățare pentru Relații</h1>
         <p className="landing-sub">RITUAL PERSONALIZAT</p>
 
         <div className="landing-divider" />
@@ -27,6 +23,13 @@ export default function LandingPage() {
             <p className="lcard-title">Cuplu / Partener</p>
             <p className="lcard-desc">
               Eliberează rănile, așteptările și tiparele din relația de cuplu
+            </p>
+          </div>
+          <div className="lcard">
+            <span className="lcard-icon">🪞</span>
+            <p className="lcard-title">Relația cu Mine</p>
+            <p className="lcard-desc">
+              Vindecă relația cu tine însuți — valoare, iubire de sine și eliberare interioară
             </p>
           </div>
           <div className="lcard">

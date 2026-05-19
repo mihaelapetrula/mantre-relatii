@@ -59,11 +59,12 @@ a { color: inherit; text-decoration: none; }
 
 .landing-title {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 38px;
+  font-size: 34px;
   font-weight: 300;
   color: var(--purple);
-  line-height: 1.25;
+  line-height: 1.2;
   margin-bottom: 0.4rem;
+  white-space: nowrap;
 }
 
 .landing-title em { color: var(--gold); font-style: italic; }
@@ -94,7 +95,7 @@ a { color: inherit; text-decoration: none; }
 
 .landing-cards {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   gap: 1rem;
   margin-bottom: 2rem;
 }
@@ -497,7 +498,7 @@ a { color: inherit; text-decoration: none; }
 }
 
 /* Responsive */
-@media (max-width: 480px) {
+@media (max-width: 600px) {
   .landing-cards { grid-template-columns: 1fr; }
   .landing-title, .gen-title { font-size: 28px; }
   .step-block { padding: 1.5rem 1.25rem; }

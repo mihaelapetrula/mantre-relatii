@@ -131,11 +131,7 @@ export default function MantraGenerator() {
       <div className="generator-inner">
         <div className="gen-header">
           <span className="ornament">✦ ✦ ✦</span>
-          <h1 className="gen-title">
-            Mantre de <em>Curățare</em>
-            <br />
-            pentru Relații
-          </h1>
+          <h1 className="gen-title">Mantre de <em>Curățare</em> pentru Relații</h1>
           <p className="gen-sub">RITUAL PERSONALIZAT</p>
         </div>
 
@@ -157,21 +153,24 @@ export default function MantraGenerator() {
               onChange={(e) => setUserName(e.target.value)}
             />
 
-            <div className="q-spacer" />
-
-            <label className="q-label">
-              Pentru cine creezi acest ritual?
-              <span className="q-sub">
-                SCRIE CLAR NUMELE PERSOANEI CU CARE LUCREZI
-              </span>
-            </label>
-            <input
-              type="text"
-              className="r-input"
-              placeholder="Prenumele persoanei..."
-              value={personName}
-              onChange={(e) => setPersonName(e.target.value)}
-            />
+            {relationType !== "sine" && (
+              <>
+                <div className="q-spacer" />
+                <label className="q-label">
+                  Pentru cine creezi acest ritual?
+                  <span className="q-sub">
+                    SCRIE CLAR NUMELE PERSOANEI CU CARE LUCREZI
+                  </span>
+                </label>
+                <input
+                  type="text"
+                  className="r-input"
+                  placeholder="Prenumele persoanei..."
+                  value={personName}
+                  onChange={(e) => setPersonName(e.target.value)}
+                />
+              </>
+            )}
 
             <div className="q-spacer" />
 
@@ -201,7 +200,9 @@ export default function MantraGenerator() {
         {step === 2 && (
           <div className="step-block">
             <label className="q-label">
-              Cum te simți acum în această relație?
+              {relationType === "sine"
+                ? "Cum te simți acum în relația cu tine?"
+                : "Cum te simți acum în această relație?"}
               <span className="q-sub">
                 DESCRIE CU CUVINTELE TALE — FII SINCER(Ă) CU TINE
               </span>
@@ -209,7 +210,9 @@ export default function MantraGenerator() {
             <textarea
               className="r-input r-textarea"
               rows={5}
-              placeholder="ex: Mă simt epuizat(ă), îndepărtat(ă), blocat(ă). Simt că nu mă înțelege nimeni și că dau mereu fără să primesc..."
+              placeholder={relationType === "sine"
+                ? "ex: Mă simt obosit(ă), pierdut(ă), critic(ă) față de mine. Simt că nu sunt destul..."
+                : "ex: Mă simt epuizat(ă), îndepărtat(ă), blocat(ă). Simt că nu mă înțelege nimeni..."}
               value={feelingNow}
               onChange={(e) => setFeelingNow(e.target.value)}
             />
